@@ -89,7 +89,7 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
 material_waste(50,"kg",4,6)
 
 
-# In[10]:
+# In[3]:
 
 
 def interest(principal, rate, periods):
@@ -121,16 +121,16 @@ def interest(principal, rate, periods):
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     interest = principal+(principal*rate)*periods
-    return interest
+    return int(interest)
 
 
-# In[11]:
+# In[5]:
 
 
-interest(1000000,.2,4)
+interest(77777,.2,4)
 
 
-# In[7]:
+# In[6]:
 
 
 def body_mass_index(weight, height):
