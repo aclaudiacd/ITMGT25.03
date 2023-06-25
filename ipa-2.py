@@ -289,7 +289,7 @@ def scytale_cipher(message, shift):
 scytale_cipher("ALGORITHMS_ARE_IMPORTANT", 8)
 
 
-# In[12]:
+# In[1]:
 
 
 def scytale_decipher(message, shift):
@@ -319,31 +319,21 @@ def scytale_decipher(message, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    rows = len(message) // shift
-    columns = shift
     
-    grid = [[""] * columns for _ in range(rows)]
-    index = 0
-    
-    for x in range(rows):
-        for y in range(columns):
-            grid[x][y] = message[index]
-            index += 1
-            
-    non_gibberish = ""
-    for y in range(columns):
-        for x in range(rows):
-            non_gibberish += grid[x][y]
-            
-    non_gibberish = non_gibberish.replace("_"," ")
-    
-    return non_gibberish
+    decoded_message = ""
+    num_rows = len(message) // shift
+    num_cols = shift
+    for col in range(num_cols):
+        for row in range(num_rows):
+            index = row * num_cols + col
+            decoded_message += message[index]
+    return decoded_message
 
 
-# In[13]:
+# In[3]:
 
 
-scytale_decipher("IRIANMOGFANEOT__", 4)
+scytale_decipher("AOTSRIOALRH_EMRNGIMA_PTT", 8)
 
 
 # In[ ]:
